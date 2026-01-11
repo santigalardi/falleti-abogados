@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+@theme {
+  /* === PALETA DE COLORES: Luxury Gold & Dark === */
+
+  /* PRIMARY: Color base oscuro (Fondo principal, textos fuertes) */
+  /* Un tono casi negro, profundo y serio */
+  --color-primary: #111827;
+
+  /* ACCENT: El Dorado Principal (Botones, iconos, destacados) */
+  /* Un dorado elegante, tipo "lingote", no amarillo chillón */
+  --color-accent: #c5a059;
+
+  /* ACCENT-LIGHT: Versión más brillante para hovers/interacciones */
+  --color-accent-light: #e5c07b;
+
+  /* SECONDARY: Color neutro (Textos secundarios, bordes sutiles) */
+  --color-secondary: #9ca3af;
+
+  /* === FUENTES (Se importan en el HTML) === */
+  --font-serif: 'EB Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* === CLASES UTILITARIAS PERSONALIZADAS === */
+/* Usamos las variables definidas arriba (primary, accent, etc) */
+
+.nav-link {
+  @apply text-sm font-medium text-[var(--color-secondary)] hover:text-[var(--color-accent)] transition-colors duration-300;
+}
+
+.mobile-link {
+  @apply text-lg font-medium text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors duration-300;
+}
+
+/* Botón Genérico (Opcional, muy útil) */
+.btn-gold {
+  @apply bg-[var(--color-accent)] text-[var(--color-primary)] font-bold uppercase tracking-wider px-6 py-3 hover:bg-white transition-all duration-300;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Aplicamos los colores base al documento entero */
+    background-color: white;
+    color: var(--color-primary);
+  }
+}
