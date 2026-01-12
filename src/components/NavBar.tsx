@@ -27,7 +27,6 @@ const NavBar = () => {
           {/* === LOGO (Imagen + Texto HTML) === */}
           <a href="/" className="group flex items-center gap-4">
             {/* Contenedor de la imagen de la balanza */}
-            {/* Creamos un círculo con borde dorado para enmarcar la imagen */}
             <div
               className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-[3px] p-1 transition-transform duration-500 group-hover:scale-105"
               style={{ borderColor: 'var(--color-accent)' }}
@@ -78,13 +77,14 @@ const NavBar = () => {
               ))}
             </ul>
 
-            {/* Botón CTA Destacado */}
+            {/* Botón CTA Destacado (Desktop) */}
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp"
-              className="px-7 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg rounded-sm"
+              // CAMBIO AQUÍ: hover:brightness-110 para igualar al formulario
+              className="px-7 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:brightness-110 rounded-sm"
               style={{
                 backgroundColor: 'var(--color-accent)',
                 color: 'var(--color-primary)',
@@ -128,13 +128,15 @@ const NavBar = () => {
               {link.name}
             </a>
           ))}
+          {/* Botón CTA Destacado (Mobile) */}
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
             onClick={() => setIsOpen(false)}
-            className="mt-4 block w-full text-center py-4 text-sm font-bold uppercase tracking-widest transition-colors rounded-sm"
+            // CAMBIO AQUÍ: hover:brightness-110
+            className="mt-4 block w-full text-center py-4 text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:brightness-110 rounded-sm"
             style={{
               backgroundColor: 'var(--color-accent)',
               color: 'var(--color-primary)',

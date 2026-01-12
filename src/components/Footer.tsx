@@ -2,7 +2,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 // Importamos la imagen del logo
 import logoImg from '../assets/law.png';
 
-const phoneNumber = '5492995330138'; // Corregido al número real que usábamos antes
+const phoneNumber = '5492995330138';
 const message = 'Hola, me contacto desde la web de Falleti Abogados para realizar una consulta.';
 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -27,7 +27,7 @@ const Footer = () => {
                 />
               </div>
 
-              {/* Texto del Logo: Actualizado a ABOGADOS */}
+              {/* Texto del Logo */}
               <div className="flex flex-col">
                 <span
                   className="font-serif text-xl font-bold tracking-wide text-white leading-none"
@@ -44,7 +44,6 @@ const Footer = () => {
               </div>
             </a>
 
-            {/* === DESCRIPCIÓN ACTUALIZADA (Nicho Administrativo) === */}
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Defensa estratégica en Derecho Administrativo y litigios complejos. Hacemos valer sus derechos frente al
               Estado con rigor profesional y cercanía.
@@ -91,7 +90,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* COLUMNA 3: Áreas (Actualizado con las prioridades) */}
+          {/* COLUMNA 3: Áreas (ACTUALIZADO) */}
           <div>
             <h4 className="font-bold text-sm uppercase tracking-widest mb-6 text-[var(--color-accent)]">
               Especialidades
@@ -114,7 +113,12 @@ const Footer = () => {
               </li>
               <li>
                 <a href="/areas" className="hover:text-white transition-colors">
-                  Derecho Civil y Laboral
+                  Derecho Civil
+                </a>
+              </li>
+              <li>
+                <a href="/areas" className="hover:text-white transition-colors">
+                  Sucesiones
                 </a>
               </li>
             </ul>
@@ -141,8 +145,11 @@ const Footer = () => {
               </li>
               <li>
                 <span className="block text-xs text-gray-500 mb-1">Email:</span>
-                <a href="mailto:nicolas@falleti.com.ar" className="hover:text-[var(--color-accent)] transition-colors">
-                  nicolas@falleti.com.ar
+                <a
+                  href="mailto:estudiojuridico@falleti.com.ar"
+                  className="hover:text-[var(--color-accent)] transition-colors"
+                >
+                  estudiojuridico@falleti.com.ar
                 </a>
               </li>
             </ul>
@@ -155,10 +162,10 @@ const Footer = () => {
 
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-4 md:mt-0">
             <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">
-                Aviso Legal
+              <a href="/terminos" className="hover:text-white transition-colors">
+                Términos y Condiciones
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="/privacidad" className="hover:text-white transition-colors">
                 Privacidad
               </a>
             </div>

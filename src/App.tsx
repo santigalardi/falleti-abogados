@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import WhatsAppButton from './components/WhatsAppButton';
 import Areas from './pages/Areas';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
         {/* Futuras rutas: */}
         <Route path="/nosotros" element={<About />} />
         <Route path="/areas" element={<Areas />} />
+        <Route path="/privacidad" element={<PrivacyPolicy />} />
+        <Route path="/terminos" element={<TermsConditions />} />
       </Routes>
 
       <Footer />

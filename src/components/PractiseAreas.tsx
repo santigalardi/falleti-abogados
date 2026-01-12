@@ -1,10 +1,9 @@
-import { FaHandshake, FaUserShield, FaFileContract, FaBalanceScale, FaLandmark, FaBriefcase } from 'react-icons/fa';
+import { FaHandshake, FaUserShield, FaFileContract, FaBalanceScale, FaLandmark } from 'react-icons/fa';
 import { HiArrowRight } from 'react-icons/hi';
-// 1. Importamos el hook de navegación
 import { useNavigate } from 'react-router-dom';
 
 const areas = [
-  // === NIVEL 1: ESPECIALIDAD (Lo que prometimos en el Hero) ===
+  // === NIVEL 1: ESPECIALIDAD ===
   {
     id: 1,
     title: 'Derecho Administrativo',
@@ -24,29 +23,22 @@ const areas = [
     icon: <FaFileContract size={24} />,
   },
 
-  // === NIVEL 2: ÁREAS GENERALES (Soporte y Caja) ===
+  // === NIVEL 2: ÁREAS GENERALES ===
   {
     id: 4,
-    title: 'Derecho Laboral',
-    desc: 'Reclamos por despidos, trabajo no registrado y accidentes de trabajo (ART).',
-    icon: <FaBriefcase size={24} />,
-  },
-  {
-    id: 5,
-    title: 'Derecho Civil y Daños',
-    desc: 'Indemnizaciones por accidentes de tránsito, mala praxis y responsabilidad civil.',
+    title: 'Derecho Civil',
+    desc: 'Asesoramiento en contratos y derechos reales.',
     icon: <FaBalanceScale size={24} />,
   },
   {
-    id: 6,
-    title: 'Sucesiones y Familia',
-    desc: 'Gestión de herencias, declaratorias de herederos y planificación patrimonial.',
+    id: 5,
+    title: 'Sucesiones',
+    desc: 'Gestión de herencias y declaratorias de herederos.',
     icon: <FaHandshake size={24} />,
   },
 ];
 
 const PracticeAreas = () => {
-  // 2. Inicializamos el hook
   const navigate = useNavigate();
 
   return (
@@ -81,15 +73,25 @@ const PracticeAreas = () => {
           </div>
         </div>
 
-        {/* Grid de Áreas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* CAMBIO PRINCIPAL AQUÍ:
+           1. Usamos 'flex flex-wrap' en lugar de 'grid'.
+           2. Usamos 'justify-center' para que los elementos sobrantes (los últimos 2) vayan al medio.
+           3. 'gap-6' se mantiene para el espaciado.
+        */}
+        <div className="flex flex-wrap justify-center gap-6">
           {areas.map((area) => (
             <div
               key={area.id}
-              // 3. Agregamos el evento onClick para redirigir
               onClick={() => navigate('/areas')}
-              // 4. Agregamos 'cursor-pointer' para que la mano aparezca al pasar el mouse
-              className="group relative p-8 border border-white/10 hover:border-[var(--color-accent)] transition-colors duration-500 bg-white/[0.02] cursor-pointer"
+              // CAMBIO EN TAMAÑOS:
+              // - Mobile: w-full (100%)
+              // - Tablet (md): calc(50% - 12px) -> Mitad menos la mitad del gap
+              // - Desktop (lg): calc(33.33% - 16px) -> Tercio menos compensación del gap
+              className="
+                w-full 
+                md:w-[calc(50%-12px)] 
+                lg:w-[calc(33.333%-16px)] 
+                group relative p-8 border border-white/10 hover:border-[var(--color-accent)] transition-colors duration-500 bg-white/[0.02] cursor-pointer"
             >
               {/* Icono */}
               <div

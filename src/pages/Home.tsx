@@ -1,5 +1,6 @@
-import CallToAction from '../components/CallToAction';
+import Contact from '../components/Contact';
 import Hero from '../components/Hero';
+import LocationMap from '../components/LocationMap';
 import PracticeAreas from '../components/PractiseAreas';
 import WhyUs from '../components/WhyUs';
 
@@ -9,7 +10,8 @@ const Home = () => {
       <Hero />
       <PracticeAreas />
       <WhyUs />
-      <CallToAction />
+      <Contact />
+      <LocationMap />
     </main>
   );
 };

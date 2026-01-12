@@ -10,7 +10,7 @@ const milestones = [
   },
   {
     year: '2006',
-    title: 'Especialista en Derecho Administrativo',
+    title: 'Cursado de Especialización en Derecho Administrativo',
     institution: 'Universidad de Buenos Aires (UBA)',
     desc: 'Posgrado acreditado por la CONEAU (Cat. A). Formación intensiva en contratos administrativos, servicios públicos y responsabilidad del Estado.',
     icon: <FaGraduationCap />,

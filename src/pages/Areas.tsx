@@ -1,17 +1,10 @@
-import {
-  FaLandmark,
-  FaUserShield,
-  FaFileContract,
-  FaBriefcase,
-  FaBalanceScale,
-  FaHandshake,
-  FaCheck,
-} from 'react-icons/fa';
+import { FaLandmark, FaUserShield, FaFileContract, FaBalanceScale, FaHandshake, FaCheck } from 'react-icons/fa';
 import { HiArrowRight } from 'react-icons/hi';
-import CallToAction from '../components/CallToAction';
+import Contact from '../components/Contact';
 
-// Datos extendidos con "sub-servicios"
+// Datos extendidos y corregidos según feedback del cliente
 const detailedAreas = [
+  // === FILA 1: DERECHO PÚBLICO ===
   {
     id: 1,
     title: 'Derecho Administrativo',
@@ -51,43 +44,32 @@ const detailedAreas = [
       'Defensa ante rescisiones contractuales.',
     ],
   },
+
+  // === FILA 2: DERECHO PRIVADO (Centrada) ===
   {
     id: 4,
-    title: 'Derecho Laboral',
-    icon: <FaBriefcase size={32} />,
-    desc: 'Defensa de derechos laborales en el ámbito privado con estrategia de negociación.',
+    title: 'Derecho Civil',
+    icon: <FaBalanceScale size={32} />,
+    desc: 'Asesoramiento jurídico experto en contratos, obligaciones y derechos reales.',
     services: [
-      'Despidos directos e indirectos.',
-      'Trabajo no registrado o deficiente.',
-      'Accidentes de trabajo (ART).',
-      'Diferencias salariales e indemnizaciones.',
-      'Acoso laboral (Mobbing).',
+      'Redacción y revisión de contratos.',
+      'Juicios de escrituración.',
+      'Derechos Reales (Posesión, Usucapión).',
+      'División de condominios.',
+      'Incumplimientos contractuales y Daños.',
     ],
   },
   {
     id: 5,
-    title: 'Derecho Civil y Daños',
-    icon: <FaBalanceScale size={32} />,
-    desc: 'Reparación integral de daños y resolución de conflictos entre particulares.',
-    services: [
-      'Accidentes de tránsito y siniestros.',
-      'Mala praxis médica y profesional.',
-      'Incumplimientos contractuales.',
-      'Juicios ejecutivos y cobranzas.',
-      'Derechos del consumidor.',
-    ],
-  },
-  {
-    id: 6,
-    title: 'Sucesiones y Familia',
+    title: 'Sucesiones',
     icon: <FaHandshake size={32} />,
-    desc: 'Gestión sensible y eficiente de conflictos familiares y patrimoniales.',
+    desc: 'Gestión integral de procesos sucesorios, asegurando la transmisión ordenada del patrimonio.',
     services: [
-      'Sucesiones ab-intestato y testamentarias.',
+      'Tramitación de Sucesiones Ab-intestato.',
+      'Sucesiones Testamentarias.',
       'Declaratoria de herederos.',
-      'Divorcios y división de bienes.',
-      'Acuerdos prenupciales.',
-      'Planificación hereditaria.',
+      'Partición y adjudicación de bienes.',
+      'Inscripción de inmuebles y automotores.',
     ],
   },
 ];
@@ -110,18 +92,27 @@ const Areas = () => {
         </p>
       </section>
 
-      {/* === GRID DETALLADO === */}
+      {/* === TARJETAS DE SERVICIOS === */}
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* CAMBIO: Flexbox + justify-center para centrar los elementos huerfanos */}
+          <div className="flex flex-wrap justify-center gap-8">
             {detailedAreas.map((area) => (
               <div
                 key={area.id}
-                className="bg-white p-8 rounded-sm shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                // CÁLCULO DE ANCHOS:
+                // Mobile: 100%
+                // Tablet: 50% menos la mitad del gap (16px)
+                // Desktop: 33.33% menos compensación del gap
+                className="
+                  w-full 
+                  md:w-[calc(50%-16px)] 
+                  lg:w-[calc(33.333%-22px)]
+                  bg-white p-8 rounded-sm shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col"
               >
                 {/* Header Card */}
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-[var(--color-accent)]">
+                  <div className="w-14 h-14 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-[var(--color-accent)] shrink-0">
                     {area.icon}
                   </div>
                   {/* Número decorativo */}
@@ -137,10 +128,12 @@ const Areas = () => {
                   {area.title}
                 </h3>
 
-                <p className="text-gray-600 text-sm mb-6 leading-relaxed border-b border-gray-100 pb-6">{area.desc}</p>
+                <p className="text-gray-600 text-sm mb-6 leading-relaxed border-b border-gray-100 pb-6 grow">
+                  {area.desc}
+                </p>
 
                 {/* Lista de Sub-servicios */}
-                <ul className="space-y-3">
+                <ul className="space-y-3 mb-8">
                   {area.services.map((service, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-sm text-gray-700">
                       <FaCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={12} />
@@ -150,7 +143,7 @@ const Areas = () => {
                 </ul>
 
                 {/* Botón Consultar específico */}
-                <div className="mt-8 pt-6 border-t border-gray-100">
+                <div className="mt-auto pt-6 border-t border-gray-100">
                   <a
                     href={`https://wa.me/5492995330138?text=Hola, quisiera consultar sobre un tema de ${area.title}...`}
                     target="_blank"
@@ -167,8 +160,7 @@ const Areas = () => {
         </div>
       </section>
 
-      {/* CTA FINAL (Reutilizamos el que ya tenemos) */}
-      <CallToAction />
+      <Contact />
     </div>
   );
 };

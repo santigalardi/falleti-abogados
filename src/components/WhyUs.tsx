@@ -4,12 +4,11 @@ const features = [
   {
     icon: <FaFileSignature />,
     title: 'Conocimiento del Sistema',
-    desc: 'Entendemos los tiempos y procesos de la Administración Pública. Sabemos cómo destrabar expedientes.',
+    desc: 'Comprendemos la lógica interna de la Administración Pública. Nuestros abogados son expertos en el campo.',
   },
   {
-    icon: <FaRegHandshake />, // Icono de trato humano/compromiso
+    icon: <FaRegHandshake />,
     title: 'Claridad y Franqueza',
-    // CAMBIO AQUÍ: Enfoque en la honestidad profesional en lugar de "quién atiende"
     desc: 'Hablamos con la verdad sobre las posibilidades reales de su caso. Sin falsas promesas y con comunicación constante.',
   },
   {
@@ -19,17 +18,11 @@ const features = [
   },
 ];
 
-const stats = [
-  { number: '+15', label: 'Años de Experiencia' },
-  { number: '+500', label: 'Expedientes Gestionados' },
-  { number: '98%', label: 'Resoluciones Favorables' },
-];
-
 const WhyUs = () => {
   return (
     <section className="py-24 bg-white text-[var(--color-primary)]">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* === COLUMNA IZQUIERDA: Filosofía === */}
           <div>
             <span className="font-bold uppercase tracking-widest text-xs mb-4 block text-[var(--color-accent)]">
@@ -47,11 +40,10 @@ const WhyUs = () => {
               entre el ciudadano y el Estado."
             </h2>
 
-            {/* CAMBIO DE MARCA AQUÍ */}
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               Enfrentar a la administración pública puede ser intimidante. En <strong>Falleti Abogados</strong>,
               transformamos esa complejidad en una estrategia de defensa sólida. No solo gestionamos papeles; defendemos
-              sus derechos frente a la arbitrariedad y la burocracia con un enfoque inteligente.
+              sus derechos frente a la arbitrariedad con un enfoque inteligente.
             </p>
 
             <a
@@ -62,12 +54,14 @@ const WhyUs = () => {
             </a>
           </div>
 
-          {/* === COLUMNA DERECHA: Features & Stats === */}
-          <div className="relative">
-            {/* Grid de Características */}
-            <div className="grid sm:grid-cols-1 gap-8 mb-12">
+          {/* === COLUMNA DERECHA: Features & Big Stat === */}
+          <div className="relative flex flex-col justify-between h-full">
+            {/* 1. Lista de Características */}
+            <div className="grid sm:grid-cols-1 gap-10 mb-12">
               {features.map((feature, index) => (
+                // Se eliminó la clase 'group' del padre
                 <div key={index} className="flex gap-5">
+                  {/* CAMBIO AQUÍ: Se eliminaron las clases group-hover y transition */}
                   <div className="shrink-0 w-12 h-12 rounded-full bg-[var(--color-surface)] flex items-center justify-center text-[var(--color-accent)] text-xl">
                     {feature.icon}
                   </div>
@@ -79,19 +73,28 @@ const WhyUs = () => {
               ))}
             </div>
 
-            {/* Barra de Estadísticas */}
-            <div className="border-t border-gray-200 pt-8 grid grid-cols-3 gap-4">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center sm:text-left">
-                  <p
-                    className="text-3xl md:text-4xl font-serif font-bold text-[var(--color-accent)] mb-1"
-                    style={{ fontFamily: 'var(--font-serif)' }}
-                  >
-                    {stat.number}
-                  </p>
-                  <p className="text-xs font-bold uppercase tracking-wider text-gray-400">{stat.label}</p>
+            {/* 2. DATO DE IMPACTO (25 AÑOS) */}
+            <div className="relative border-t border-gray-100 pt-8 mt-4">
+              <div className="flex flex-row items-center gap-6">
+                {/* Número Grande */}
+                <span
+                  className="text-7xl font-serif font-bold text-[var(--color-accent)] leading-none"
+                  style={{ fontFamily: 'var(--font-serif)' }}
+                >
+                  +25
+                </span>
+
+                {/* Texto Descriptivo */}
+                <div className="flex flex-col">
+                  <span className="text-xl font-bold text-[var(--color-primary)] uppercase tracking-wide">
+                    Años de <br />
+                    Trayectoria
+                  </span>
+                  <span className="text-sm text-gray-500 mt-1">
+                    Ejerciendo ininterrumpidamente en el fuero administrativo.
+                  </span>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>

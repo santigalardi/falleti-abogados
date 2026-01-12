@@ -22,12 +22,7 @@ const AboutHero = () => {
 
             <div className="space-y-6 text-gray-300 text-lg font-light leading-relaxed">
               <p>
-                <strong className="text-white font-medium">
-                  Abogado (UADE) y Especialista en Derecho Administrativo (UBA).
-                </strong>
-              </p>
-              <p>
-                Nacido y radicado en Neuquén, cuenta con más de 20 años de ejercicio profesional. Su formación combina
+                Nacido y radicado en Neuquén, cuenta con más de 25 años de ejercicio profesional. Su formación combina
                 el rigor técnico de una <strong>Maestría en Derecho Procesal (UNR)</strong> y un Posgrado en Petróleo y
                 Gas (UBA), con una profunda vocación humanista.
               </p>

@@ -1,5 +1,5 @@
 import AboutHero from '../components/AboutHero';
-import CallToAction from '../components/CallToAction';
+import Contact from '../components/Contact';
 import Timeline from '../components/Timeline';
 
 const About = () => {
@@ -7,7 +7,7 @@ const About = () => {
     <div className="bg-white">
       <AboutHero />
       <Timeline />
-      <CallToAction />
+      <Contact />
     </div>
   );
 };
