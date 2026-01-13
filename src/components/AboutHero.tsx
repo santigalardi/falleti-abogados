@@ -22,9 +22,10 @@ const AboutHero = () => {
 
             <div className="space-y-6 text-gray-300 text-lg font-light leading-relaxed">
               <p>
-                Nacido y radicado en Neuquén, cuenta con más de 25 años de ejercicio profesional. Su formación combina
-                el rigor técnico de una <strong>Maestría en Derecho Procesal (UNR)</strong> y un Posgrado en Petróleo y
-                Gas (UBA), con una profunda vocación humanista.
+                Nacido y radicado en Neuquén, cuenta con más de 25 años de ejercicio profesional en derecho
+                administrativo, dentro y fuera de la administración pública. Su formación combina el rigor técnico de
+                una <strong>Maestría en Derecho Procesal (UNR)</strong> y un Posgrado en Petróleo y Gas (UBA), con una
+                profunda vocación humanista.
               </p>
               <p>
                 Recientemente graduado como <strong>Licenciado en Letras (UNCOMA, 2025)</strong> con honores, aporta a

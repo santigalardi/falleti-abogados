@@ -9,7 +9,7 @@ const features = [
   {
     icon: <FaRegHandshake />,
     title: 'Claridad y Franqueza',
-    desc: 'Hablamos con la verdad sobre las posibilidades reales de su caso. Sin falsas promesas y con comunicación constante.',
+    desc: 'Hablamos con la verdad sobre las posibilidades reales de su caso. Sin vanas nociones y con comunicación constante.',
   },
   {
     icon: <FaBalanceScale />,
@@ -26,24 +26,25 @@ const WhyUs = () => {
           {/* === COLUMNA IZQUIERDA: Filosofía === */}
           <div>
             <span className="font-bold uppercase tracking-widest text-xs mb-4 block text-[var(--color-accent)]">
-              Nuestra Filosofía
+              Misión
             </span>
             <h2
               className="text-4xl md:text-5xl font-serif font-bold leading-tight mb-8"
               style={{ fontFamily: 'var(--font-serif)' }}
             >
-              "Nuestra misión es{' '}
-              <span className="italic text-[var(--color-primary)] relative z-10">
+              Nuestra misión es{' '}
+              <span className="italic text-[var(--color-primary)] relative z-10 inline-block">
                 equilibrar la fuerza
+                {/* El subrayado funciona perfecto porque el bloque nunca se parte a la mitad */}
                 <span className="absolute bottom-1 left-0 w-full h-3 bg-[var(--color-accent-light)] -z-10 opacity-30"></span>
               </span>{' '}
-              entre el ciudadano y el Estado."
+              entre el ciudadano y el Estado.
             </h2>
 
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               Enfrentar a la administración pública puede ser intimidante. En <strong>Falleti Abogados</strong>,
-              transformamos esa complejidad en una estrategia de defensa sólida. No solo gestionamos papeles; defendemos
-              sus derechos frente a la arbitrariedad con un enfoque inteligente.
+              transformamos esa complejidad en una estrategia de defensa sólida. No solo gestionamos documentos;
+              defendemos sus derechos frente a la arbitrariedad con un enfoque inteligente.
             </p>
 
             <a
