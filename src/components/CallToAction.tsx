@@ -36,7 +36,7 @@ const CallToAction = () => {
             href="https://wa.me/5492995330138"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 px-8 py-4 text-xs font-bold uppercase tracking-widest text-[var(--color-primary)] transition-all duration-300 hover:scale-105 hover:bg-white rounded-sm"
+            className="flex items-center gap-3 px-8 py-4 text-xs font-bold uppercase tracking-widest text-primary transition-all duration-300 hover:scale-105 hover:bg-white rounded-sm"
             style={{ backgroundColor: 'var(--color-accent)' }}
           >
             <FaWhatsapp size={20} />

@@ -1,29 +1,48 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// === COMPONENTES GLOBALES (Carga inmediata) ===
+// Estos se quedan estáticos porque se ven siempre
 import NavBar from './components/NavBar';
-import Footer from './components/Footer'; // <--- Importar Footer
-import Home from './pages/Home';
-import About from './pages/About';
+import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
-import Areas from './pages/Areas';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsConditions from './pages/TermsConditions';
+// Importamos el loader que creamos antes
+import PageLoader from './components/PageLoader';
+
+// === CODE SPLITTING (Lazy Loading) ===
+// Las páginas ahora se importan dinámicamente.
+// Vite separará cada una en un archivo .js distinto (chunk).
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Areas = lazy(() => import('./pages/Areas'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsConditions = lazy(() => import('./pages/TermsConditions'));
 
 const App = () => {
   return (
     <BrowserRouter>
-      <NavBar />
+      {/* Contenedor principal para estructura de página completa (Sticky Footer) */}
+      <div className="flex flex-col min-h-screen">
+        <NavBar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* Futuras rutas: */}
-        <Route path="/nosotros" element={<About />} />
-        <Route path="/areas" element={<Areas />} />
-        <Route path="/privacidad" element={<PrivacyPolicy />} />
-        <Route path="/terminos" element={<TermsConditions />} />
-      </Routes>
+        {/* 'flex-grow' hace que el contenido ocupe todo el espacio disponible,
+            empujando el Footer hacia abajo */}
+        {/* Suspense maneja la espera mientras llega el código de la página */}
+        <Suspense fallback={<PageLoader />}>
+          <main className="grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/nosotros" element={<About />} />
+              <Route path="/areas" element={<Areas />} />
+              <Route path="/privacidad" element={<PrivacyPolicy />} />
+              <Route path="/terminos" element={<TermsConditions />} />
+            </Routes>
+          </main>
 
-      <Footer />
-      <WhatsAppButton />
+          <Footer />
+        </Suspense>
+        <WhatsAppButton />
+      </div>
     </BrowserRouter>
   );
 };

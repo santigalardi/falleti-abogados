@@ -86,8 +86,7 @@ const Areas = () => {
           Áreas de Práctica
         </h1>
         <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-          Un enfoque integral dividido en dos grandes ramas:{' '}
-          <span className="text-[var(--color-accent)]">Derecho Público </span>y{' '}
+          Un enfoque integral dividido en dos grandes ramas: <span className="text-accent">Derecho Público </span>y{' '}
           <span className="text-white">Derecho Privado</span>.
         </p>
       </section>
@@ -112,7 +111,7 @@ const Areas = () => {
               >
                 {/* Header Card */}
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-[var(--color-accent)] shrink-0">
+                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-accent shrink-0">
                     {area.icon}
                   </div>
                   {/* Número decorativo */}
@@ -122,7 +121,7 @@ const Areas = () => {
                 </div>
 
                 <h3
-                  className="text-2xl font-serif font-bold text-[var(--color-primary)] mb-3"
+                  className="text-2xl font-serif font-bold text-primary mb-3"
                   style={{ fontFamily: 'var(--font-serif)' }}
                 >
                   {area.title}
@@ -136,7 +135,7 @@ const Areas = () => {
                 <ul className="space-y-3 mb-8">
                   {area.services.map((service, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-sm text-gray-700">
-                      <FaCheck className="text-[var(--color-accent)] shrink-0 mt-1" size={12} />
+                      <FaCheck className="text-accent shrink-0 mt-1" size={12} />
                       <span>{service}</span>
                     </li>
                   ))}
@@ -148,7 +147,7 @@ const Areas = () => {
                     href={`https://wa.me/5492995330138?text=Hola, quisiera consultar sobre un tema de ${area.title}...`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-accent transition-colors"
                   >
                     Consultar por esto
                     <HiArrowRight />

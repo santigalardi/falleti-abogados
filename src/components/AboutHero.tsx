@@ -1,4 +1,4 @@
-import profileImg from '../assets/profile-nobg.png';
+import profileImg from '../assets/profile-nobg.webp';
 
 const AboutHero = () => {
   return (
@@ -37,9 +37,9 @@ const AboutHero = () => {
             {/* Idiomas / Habilidades Extra */}
             <div className="mt-8 pt-8 border-t border-white/10 flex gap-6 text-sm text-gray-400 uppercase tracking-wider font-bold">
               <span>Español</span>
-              <span className="text-[var(--color-accent)]">•</span>
+              <span className="text-accent">•</span>
               <span>Portugués</span>
-              <span className="text-[var(--color-accent)]">•</span>
+              <span className="text-accent">•</span>
               <span>Francés</span>
             </div>
           </div>
@@ -54,14 +54,14 @@ const AboutHero = () => {
               ></div>
 
               {/* Contenedor Imagen: Restaurado a max-w-md */}
-              <div className="relative bg-gradient-to-b from-white/10 to-transparent rounded-sm overflow-hidden max-w-md">
+              <div className="relative bg-linear-to-b from-white/10 to-transparent rounded-sm overflow-hidden max-w-md">
                 <img
                   src={profileImg}
                   alt="Nicolas Atilio Falleti"
                   className="w-full h-auto object-cover transform scale-100 hover:scale-105 transition-transform duration-700"
                 />
                 {/* Degradado inferior original */}
-                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[var(--color-primary)] to-transparent"></div>
+                <div className="absolute bottom-0 left-0 w-full h-24 bg-linear-to-t from-primary to-transparent"></div>
               </div>
             </div>
           </div>

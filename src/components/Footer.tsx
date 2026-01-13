@@ -1,6 +1,6 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 // Importamos la imagen del logo
-import logoImg from '../assets/law.png';
+import logoImg from '../assets/law.webp';
 
 const phoneNumber = '5492995330138';
 const message = 'Hola, me contacto desde la web de Falleti Abogados para realizar una consulta.';
@@ -8,7 +8,7 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0b111a] text-white border-t border-white/5 pt-16 pb-8">
+    <footer className="bg-primary text-white border-t border-white/5 pt-16 pb-8">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* COLUMNA 1: Marca */}
@@ -16,10 +16,7 @@ const Footer = () => {
             {/* === LOGO INTEGRADO === */}
             <a href="/" className="group flex items-center gap-3 mb-6">
               {/* Contenedor de la imagen */}
-              <div
-                className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-[2px] p-0.5 transition-transform duration-500 group-hover:scale-105"
-                style={{ borderColor: 'var(--color-accent)' }}
-              >
+              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 border-accent p-0.5 transition-transform duration-500 group-hover:scale-105">
                 <img
                   src={logoImg}
                   alt="Insignia Falleti"
@@ -29,18 +26,15 @@ const Footer = () => {
 
               {/* Texto del Logo */}
               <div className="flex flex-col">
-                <span
-                  className="font-serif text-xl font-bold tracking-wide text-white leading-none"
-                  style={{ fontFamily: 'var(--font-serif)' }}
+                <span className="font-serif text-xl font-bold tracking-wide text-white leading-none">FALLETI</span>
+                <div
+                  className="flex justify-between w-full mt-1 font-sans text-[10px] font-bold uppercase text-accent"
+                  aria-label="Abogados"
                 >
-                  FALLETI
-                </span>
-                <span
-                  className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] mt-1"
-                  style={{ color: 'var(--color-accent)', fontFamily: 'var(--font-sans)' }}
-                >
-                  Abogados
-                </span>
+                  {'Abogados'.split('').map((char, index) => (
+                    <span key={index}>{char}</span>
+                  ))}
+                </div>
               </div>
             </a>
 
@@ -55,7 +49,7 @@ const Footer = () => {
                 <a
                   key={i}
                   href="#"
-                  className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-[var(--color-accent)] hover:text-[var(--color-primary)] transition-all"
+                  className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-accent hover:text-primary transition-all"
                 >
                   <Icon size={14} />
                 </a>
@@ -65,7 +59,7 @@ const Footer = () => {
 
           {/* COLUMNA 2: Enlaces Rápidos */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-widest mb-6 text-[var(--color-accent)]">Navegación</h4>
+            <h4 className="font-bold text-sm uppercase tracking-widest mb-6 text-accent">Navegación</h4>
             <ul className="space-y-4 text-sm text-gray-400">
               <li>
                 <a href="/" className="hover:text-white transition-colors">
@@ -90,11 +84,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* COLUMNA 3: Áreas (ACTUALIZADO) */}
+          {/* COLUMNA 3: Especialidades */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-widest mb-6 text-[var(--color-accent)]">
-              Especialidades
-            </h4>
+            <h4 className="font-bold text-sm uppercase tracking-widest mb-6 text-accent">Especialidades</h4>
             <ul className="space-y-4 text-sm text-gray-400">
               <li>
                 <a href="/areas" className="hover:text-white transition-colors">
@@ -126,7 +118,7 @@ const Footer = () => {
 
           {/* COLUMNA 4: Contacto */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-widest mb-6 text-[var(--color-accent)]">Contacto</h4>
+            <h4 className="font-bold text-sm uppercase tracking-widest mb-6 text-accent">Contacto</h4>
             <ul className="space-y-4 text-sm text-gray-400">
               <li>
                 <span className="block text-xs text-gray-500 mb-1">Dirección:</span>
@@ -138,17 +130,14 @@ const Footer = () => {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[var(--color-accent)] transition-colors"
+                  className="hover:text-accent transition-colors"
                 >
                   +54 9 299 533 0138
                 </a>
               </li>
               <li>
                 <span className="block text-xs text-gray-500 mb-1">Email:</span>
-                <a
-                  href="mailto:estudiojuridico@falleti.com.ar"
-                  className="hover:text-[var(--color-accent)] transition-colors"
-                >
+                <a href="mailto:estudiojuridico@falleti.com.ar" className="hover:text-accent transition-colors">
                   estudiojuridico@falleti.com.ar
                 </a>
               </li>
@@ -170,7 +159,6 @@ const Footer = () => {
               </a>
             </div>
 
-            {/* Separador vertical (solo desktop) */}
             <span className="hidden sm:block text-white/10">|</span>
 
             {/* === CRÉDITO DIGITALYA === */}
@@ -181,7 +169,7 @@ const Footer = () => {
               className="group flex items-center gap-1 hover:text-white transition-colors"
             >
               Creado por
-              <span className="font-bold text-[var(--color-accent)] group-hover:underline decoration-[var(--color-accent)] underline-offset-4">
+              <span className="font-bold text-accent group-hover:underline decoration-accent underline-offset-4">
                 DigitalYa
               </span>
             </a>

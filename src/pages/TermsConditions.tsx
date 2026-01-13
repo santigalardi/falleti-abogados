@@ -13,7 +13,7 @@ const TermsConditions = () => {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="inline-flex items-center justify-center p-3 rounded-full border border-white/10 mb-6 bg-white/5">
-            <FaFileContract className="text-[var(--color-accent)] text-2xl" />
+            <FaFileContract className="text-accent text-2xl" />
           </div>
           <h1
             className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif"
@@ -46,12 +46,12 @@ const TermsConditions = () => {
           <div className="space-y-12">
             {/* 1. Naturaleza de la Información */}
             <div className="flex gap-6 items-start">
-              <div className="hidden md:flex shrink-0 w-12 h-12 rounded-sm bg-gray-50 items-center justify-center text-[var(--color-primary)]">
+              <div className="hidden md:flex shrink-0 w-12 h-12 rounded-sm bg-gray-50 items-center justify-center text-primary">
                 <FaHandshake size={20} />
               </div>
               <div>
                 <h2
-                  className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-serif"
+                  className="text-2xl font-bold text-primary mb-4 font-serif"
                   style={{ fontFamily: 'var(--font-serif)' }}
                 >
                   1. Relación Abogado-Cliente
@@ -70,12 +70,12 @@ const TermsConditions = () => {
 
             {/* 2. Propiedad Intelectual */}
             <div className="flex gap-6 items-start">
-              <div className="hidden md:flex shrink-0 w-12 h-12 rounded-sm bg-gray-50 items-center justify-center text-[var(--color-primary)]">
+              <div className="hidden md:flex shrink-0 w-12 h-12 rounded-sm bg-gray-50 items-center justify-center text-primary">
                 <FaCopyright size={20} />
               </div>
               <div>
                 <h2
-                  className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-serif"
+                  className="text-2xl font-bold text-primary mb-4 font-serif"
                   style={{ fontFamily: 'var(--font-serif)' }}
                 >
                   2. Propiedad Intelectual
@@ -91,12 +91,12 @@ const TermsConditions = () => {
 
             {/* 3. Limitación de Responsabilidad */}
             <div className="flex gap-6 items-start">
-              <div className="hidden md:flex shrink-0 w-12 h-12 rounded-sm bg-gray-50 items-center justify-center text-[var(--color-primary)]">
+              <div className="hidden md:flex shrink-0 w-12 h-12 rounded-sm bg-gray-50 items-center justify-center text-primary">
                 <FaExclamationTriangle size={20} />
               </div>
               <div>
                 <h2
-                  className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-serif"
+                  className="text-2xl font-bold text-primary mb-4 font-serif"
                   style={{ fontFamily: 'var(--font-serif)' }}
                 >
                   3. Limitación de Responsabilidad
@@ -113,11 +113,8 @@ const TermsConditions = () => {
             {/* 4. Jurisdicción */}
             <div className="bg-gray-50 p-8 rounded-sm border-l-4" style={{ borderColor: 'var(--color-accent)' }}>
               <div className="flex items-center gap-3 mb-4">
-                <FaGavel className="text-[var(--color-primary)]" size={24} />
-                <h2
-                  className="text-xl font-bold text-[var(--color-primary)] font-serif"
-                  style={{ fontFamily: 'var(--font-serif)' }}
-                >
+                <FaGavel className="text-primary" size={24} />
+                <h2 className="text-xl font-bold text-primary font-serif" style={{ fontFamily: 'var(--font-serif)' }}>
                   4. Legislación y Jurisdicción
                 </h2>
               </div>

@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="inline-flex items-center justify-center p-3 rounded-full border border-white/10 mb-6 bg-white/5">
-            <FaShieldAlt className="text-[var(--color-accent)] text-2xl" />
+            <FaShieldAlt className="text-accent text-2xl" />
           </div>
           <h1
             className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif"
@@ -45,12 +45,12 @@ const PrivacyPolicy = () => {
           <div className="space-y-12">
             {/* 1. Responsable */}
             <div className="flex gap-6 items-start">
-              <div className="hidden md:flex shrink-0 w-12 h-12 rounded-sm bg-gray-50 items-center justify-center text-[var(--color-primary)]">
+              <div className="hidden md:flex shrink-0 w-12 h-12 rounded-sm bg-gray-50 items-center justify-center text-primary">
                 <FaGavel size={20} />
               </div>
               <div>
                 <h2
-                  className="text-2xl font-bold text-[var(--color-primary)] mb-4 flex items-center gap-3 font-serif"
+                  className="text-2xl font-bold text-primary mb-4 flex items-center gap-3 font-serif"
                   style={{ fontFamily: 'var(--font-serif)' }}
                 >
                   1. Responsable del Tratamiento
@@ -65,12 +65,12 @@ const PrivacyPolicy = () => {
 
             {/* 2. Recolección */}
             <div className="flex gap-6 items-start">
-              <div className="hidden md:flex shrink-0 w-12 h-12 rounded-sm bg-gray-50 items-center justify-center text-[var(--color-primary)]">
+              <div className="hidden md:flex shrink-0 w-12 h-12 rounded-sm bg-gray-50 items-center justify-center text-primary">
                 <FaServer size={20} />
               </div>
               <div>
                 <h2
-                  className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-serif"
+                  className="text-2xl font-bold text-primary mb-4 font-serif"
                   style={{ fontFamily: 'var(--font-serif)' }}
                 >
                   2. Información que Recopilamos
@@ -89,12 +89,12 @@ const PrivacyPolicy = () => {
 
             {/* 3. Finalidad */}
             <div className="flex gap-6 items-start">
-              <div className="hidden md:flex shrink-0 w-12 h-12 rounded-sm bg-gray-50 items-center justify-center text-[var(--color-primary)]">
+              <div className="hidden md:flex shrink-0 w-12 h-12 rounded-sm bg-gray-50 items-center justify-center text-primary">
                 <FaUserLock size={20} />
               </div>
               <div>
                 <h2
-                  className="text-2xl font-bold text-[var(--color-primary)] mb-4 font-serif"
+                  className="text-2xl font-bold text-primary mb-4 font-serif"
                   style={{ fontFamily: 'var(--font-serif)' }}
                 >
                   3. Finalidad y Secreto Profesional
@@ -115,7 +115,7 @@ const PrivacyPolicy = () => {
             {/* 4. Derechos */}
             <div className="bg-gray-50 p-8 rounded-sm border-l-4" style={{ borderColor: 'var(--color-accent)' }}>
               <h2
-                className="text-xl font-bold text-[var(--color-primary)] mb-4 font-serif"
+                className="text-xl font-bold text-primary mb-4 font-serif"
                 style={{ fontFamily: 'var(--font-serif)' }}
               >
                 4. Sus Derechos (Habeas Data)
@@ -128,7 +128,7 @@ const PrivacyPolicy = () => {
                 Para ejercer estos derechos, puede contactarnos a:
                 <a
                   href="mailto:estudiojuridico@falleti.com.ar"
-                  className="font-bold text-[var(--color-primary)] hover:text-[var(--color-accent)] ml-1 transition-colors"
+                  className="font-bold text-primary hover:text-accent ml-1 transition-colors"
                 >
                   estudiojuridico@falleti.com.ar
                 </a>

@@ -26,21 +26,12 @@ const Contact = () => {
     // === SIMULACIÓN DE ENVÍO ===
     setTimeout(() => {
       setIsSending(false);
-      setIsSent(true); // Muestra el overlay de éxito
-
-      // HEMOS ELIMINADO EL RESET DEL FORMULARIO Y EL TIMEOUT
-      // El estado se quedará en 'isSent = true' indefinidamente.
-      // El usuario verá el mensaje de éxito hasta que recargue la página.
+      setIsSent(true);
     }, 2000);
   };
 
   return (
-    <section
-      id="contacto"
-      className="py-24 relative overflow-hidden"
-      style={{ backgroundColor: 'var(--color-primary)' }}
-      aria-label="Sección de contacto"
-    >
+    <section id="contacto" className="py-24 relative overflow-hidden bg-primary" aria-label="Sección de contacto">
       {/* === CSS HACK PARA EL AUTOCOMPLETADO === */}
       <style>{`
         .autofill-input:-webkit-autofill,
@@ -60,18 +51,9 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* === COLUMNA IZQUIERDA: INFORMACIÓN === */}
           <div>
-            <span
-              className="font-bold uppercase tracking-widest text-xs mb-4 block"
-              style={{ color: 'var(--color-accent)' }}
-            >
-              Contacto Directo
-            </span>
-            <h2
-              className="text-4xl md:text-5xl font-serif font-bold text-white mb-8"
-              style={{ fontFamily: 'var(--font-serif)' }}
-            >
-              Evaluemos su caso.
-            </h2>
+            <span className="font-bold uppercase tracking-widest text-xs mb-4 block text-accent">Contacto Directo</span>
+
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8">Evaluemos su caso.</h2>
             <p className="text-gray-400 text-lg mb-12 leading-relaxed">
               La primera consulta es fundamental para definir la viabilidad de su reclamo. Complete el formulario o
               utilice nuestros canales directos para recibir asesoramiento.
@@ -80,7 +62,7 @@ const Contact = () => {
             <div className="space-y-8">
               {/* Item Dirección */}
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-[var(--color-accent)] shrink-0">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-accent shrink-0">
                   <FaMapMarkerAlt aria-hidden="true" />
                 </div>
                 <div>
@@ -92,7 +74,7 @@ const Contact = () => {
 
               {/* Item Email */}
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-[var(--color-accent)] shrink-0">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-accent shrink-0">
                   <FaEnvelope aria-hidden="true" />
                 </div>
                 <div>
@@ -109,7 +91,7 @@ const Contact = () => {
 
               {/* Item Teléfono */}
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-[var(--color-accent)] shrink-0">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-accent shrink-0">
                   <FaPhone aria-hidden="true" />
                 </div>
                 <div>
@@ -128,21 +110,16 @@ const Contact = () => {
             {/* OVERLAY DE ÉXITO */}
             {isSent && (
               <div
-                className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-[#0b111a]/95 backdrop-blur-sm p-8 text-center animate-in fade-in zoom-in duration-500"
+                className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-primary/95 backdrop-blur-sm p-8 text-center animate-in fade-in zoom-in duration-500"
                 role="alert"
                 aria-live="polite"
               >
                 <FaCheckCircle
                   size={60}
-                  className="mb-6 text-[var(--color-accent)] drop-shadow-[0_0_10px_rgba(197,160,89,0.5)]"
+                  className="mb-6 text-accent drop-shadow-[0_0_10px_rgba(197,160,89,0.5)]"
                   aria-hidden="true"
                 />
-                <h3
-                  className="text-2xl font-serif font-bold text-white mb-3"
-                  style={{ fontFamily: 'var(--font-serif)' }}
-                >
-                  Mensaje Enviado
-                </h3>
+                <h3 className="text-2xl font-serif font-bold text-white mb-3">Mensaje Enviado</h3>
                 <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
                   Gracias por contactarnos. Hemos recibido su consulta y le responderemos a la brevedad al email o
                   teléfono indicado.
@@ -171,7 +148,7 @@ const Contact = () => {
                   required
                   value={formData.nombre}
                   placeholder="Ingrese su nombre"
-                  className="autofill-input w-full bg-black/20 border border-white/10 text-white p-4 text-sm focus:border-[var(--color-accent)] outline-none transition-colors rounded-sm placeholder:text-gray-600"
+                  className="autofill-input w-full bg-black/20 border border-white/10 text-white p-4 text-sm focus:border-accent outline-none transition-colors rounded-sm placeholder:text-gray-600"
                   onChange={handleChange}
                   aria-label="Ingrese su nombre completo"
                 />
@@ -189,7 +166,7 @@ const Contact = () => {
                   required
                   value={formData.email}
                   placeholder="Ingrese su email"
-                  className="autofill-input w-full bg-black/20 border border-white/10 text-white p-4 text-sm focus:border-[var(--color-accent)] outline-none transition-colors rounded-sm placeholder:text-gray-600"
+                  className="autofill-input w-full bg-black/20 border border-white/10 text-white p-4 text-sm focus:border-accent outline-none transition-colors rounded-sm placeholder:text-gray-600"
                   onChange={handleChange}
                   aria-label="Ingrese su correo electrónico"
                 />
@@ -207,7 +184,7 @@ const Contact = () => {
                   required
                   value={formData.telefono}
                   placeholder="Ej: 299 123 4567"
-                  className="autofill-input w-full bg-black/20 border border-white/10 text-white p-4 text-sm focus:border-[var(--color-accent)] outline-none transition-colors rounded-sm placeholder:text-gray-600"
+                  className="autofill-input w-full bg-black/20 border border-white/10 text-white p-4 text-sm focus:border-accent outline-none transition-colors rounded-sm placeholder:text-gray-600"
                   onChange={handleChange}
                   aria-label="Ingrese su número de teléfono"
                 />
@@ -225,17 +202,17 @@ const Contact = () => {
                   required
                   value={formData.mensaje}
                   placeholder="Describa brevemente su situación..."
-                  className="autofill-input w-full bg-black/20 border border-white/10 text-white p-4 text-sm focus:border-[var(--color-accent)] outline-none transition-colors rounded-sm resize-none placeholder:text-gray-600"
+                  className="autofill-input w-full bg-black/20 border border-white/10 text-white p-4 text-sm focus:border-accent outline-none transition-colors rounded-sm resize-none placeholder:text-gray-600"
                   onChange={handleChange}
                   aria-label="Describa brevemente su situación"
                 ></textarea>
               </div>
 
-              {/* Botón Submit Corregido (Hover Sutil) */}
+              {/* Botón Submit */}
               <button
                 type="submit"
                 disabled={isSending}
-                className="w-full py-4 text-xs font-bold uppercase tracking-widest text-[var(--color-primary)] bg-[var(--color-accent)] hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 rounded-sm disabled:cursor-not-allowed disabled:opacity-70 cursor-pointer"
+                className="w-full py-4 text-xs font-bold uppercase tracking-widest text-primary bg-accent hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 rounded-sm disabled:cursor-not-allowed disabled:opacity-70 cursor-pointer"
                 aria-label={isSending ? 'Enviando mensaje' : 'Enviar mensaje'}
               >
                 {isSending ? (

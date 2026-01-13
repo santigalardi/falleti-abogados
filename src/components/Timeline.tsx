@@ -44,9 +44,7 @@ const Timeline = () => {
       <div className="mx-auto max-w-6xl px-6 relative z-10">
         {/* Título de la Sección */}
         <div className="text-center mb-20">
-          <span className="text-[var(--color-accent)] font-bold tracking-widest uppercase text-xs">
-            Trayectoria Académica
-          </span>
+          <span className="text-accent font-bold tracking-widest uppercase text-xs">Trayectoria Académica</span>
           <h2
             className="text-3xl md:text-4xl font-serif font-bold text-white mt-3"
             style={{ fontFamily: 'var(--font-serif)' }}
@@ -73,18 +71,18 @@ const Timeline = () => {
                 <div className="hidden md:block w-5/12"></div>
 
                 {/* 2. PUNTO CENTRAL (Dot) */}
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-[#0b111a] bg-[var(--color-accent)] z-10 flex items-center justify-center text-[#0b111a] text-xs">
+                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-[#0b111a] bg-accent z-10 flex items-center justify-center text-[#0b111a] text-xs">
                   {/* Círculo dorado */}
                 </div>
 
                 {/* 3. TARJETA DE CONTENIDO */}
                 <div className="ml-12 md:ml-0 w-full md:w-5/12">
-                  <div className="bg-white/5 border border-white/10 p-6 rounded-sm hover:border-[var(--color-accent)] transition-colors duration-300 group">
+                  <div className="bg-white/5 border border-white/10 p-6 rounded-sm hover:border-accent transition-colors duration-300 group">
                     <div className="flex items-center gap-4 mb-3">
-                      <span className="text-[var(--color-accent)] text-xl group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-accent text-xl group-hover:scale-110 transition-transform duration-300">
                         {item.icon}
                       </span>
-                      <span className="font-bold text-[var(--color-accent)] text-xl font-serif">{item.year}</span>
+                      <span className="font-bold text-accent text-xl font-serif">{item.year}</span>
                     </div>
                     <h3 className="text-white font-bold text-lg mb-1 leading-tight">{item.title}</h3>
                     <p className="text-gray-400 text-xs uppercase tracking-wider mb-3">{item.institution}</p>
