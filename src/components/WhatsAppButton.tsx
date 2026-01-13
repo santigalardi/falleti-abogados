@@ -1,6 +1,6 @@
 const WhatsAppButton = () => {
   // Formato Argentina: 54 + 9 + código área + número (sin 15)
-  const phoneNumber = '5492995551234';
+  const phoneNumber = '5492995330138';
   const message = 'Hola, me contacto desde la web de Falleti Abogados para realizar una consulta.';
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

@@ -5,7 +5,7 @@ import logoImg from '../assets/law.webp';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const phoneNumber = '5492995551234';
+  const phoneNumber = '5492995330138';
   const message = 'Hola, me contacto desde la web de Falleti Abogados para realizar una consulta.';
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
