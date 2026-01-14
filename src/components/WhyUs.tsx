@@ -9,7 +9,7 @@ const features = [
   {
     icon: <FaRegHandshake />,
     title: 'Claridad y Franqueza',
-    desc: 'Hablamos con la verdad sobre las posibilidades reales de su caso. Sin falsas promesas y con comunicación constante.',
+    desc: 'Hablamos con la verdad sobre las posibilidades reales de su caso. Sin vanas nociones y con comunicación constante.',
   },
   {
     icon: <FaBalanceScale />,
